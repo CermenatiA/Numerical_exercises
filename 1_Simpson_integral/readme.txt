@@ -3,3 +3,5 @@ to run the code use make exe
 
 To remove the .o and .x executable use make clean
 To remove the results file use make delete
+
+To plot the results use python3 plot.py
