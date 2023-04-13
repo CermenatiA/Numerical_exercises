@@ -5,22 +5,23 @@
 #include <iostream>
 #include <memory>
 
-class integrator_1D {
+class Integrator_1D {
 
     public:
-        integrator_1D();
-        ~integrator_1D();
+        Integrator_1D();
+        ~Integrator_1D();
         
-        double mid_points(const std::shared_ptr<scalar_function>& F, double a, double b, int N_step) const;
-        double Simpson_2_order(const std::shared_ptr<scalar_function>& F, double a, double b, int N_step) const;
-        double Simpson_Log_2_order(const std::shared_ptr<scalar_function>&, double a, double b, int N_step) const;
+        double mid_points(const std::shared_ptr<Scalar_function>& F, double a, double b, int N_step) const;
+        double simpson_2_order(const std::shared_ptr<Scalar_function>& F, double a, double b, unsigned long int N_step) const;
+        double simpson_Log_2_order(const std::shared_ptr<Scalar_function>&, double a, double b, int N_step) const;
 
-        bool Check_bounds(double a, double b) const;
-
-        void Set_lower_bound(double x);
+        void set_lower_bound(double x);
 
 
     private:
+
+        bool check_bounds(double a, double b) const;
+
         double _lower_bound = 1e-5;
 };
 #endif

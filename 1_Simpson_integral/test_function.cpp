@@ -8,23 +8,26 @@
 #ifndef test_function_h_
 #define test_function_h_
 
-class test_function : public scalar_function {
+class Test_function : public Scalar_function {
 
     public:
-        test_function() {};
-        ~test_function() {};
+        Test_function() {};
+        ~Test_function() {};
 
-        virtual double Eval(double x) const { return pow(x, 4.) - 2. * x + 1.;}
+        virtual double eval(double x) const { return pow(x, 4.) - 2. * x + 1.;}
 };
 #endif
 
 int main(){
     std::ofstream output;
     output.open("results.dat");
-    integrator_1D Integral;
-    auto F = std::make_shared<test_function>();
-    for(int i = 1; i < 21; i++){
-        output << i << std::setw(12) << Integral.Simpson_2_order(F, 0., 2., pow(2, i) ) << std::endl;
+    Integrator_1D Integral;
+    auto F = std::make_shared<Test_function>();
+    for(int i = 1; i < 17; i++){
+        long int n = pow(2,i);
+        double V = Integral.simpson_2_order(F, 0., 2., n );
+        output << log10(pow(2,i)) << std::setw(24) << std::setprecision(16) << V << std::setw(24) << std::setprecision(16) << log10((pow((4.4 - V)/4.4 , 2.))) << std::endl;
     }
     return 0;
 }
+

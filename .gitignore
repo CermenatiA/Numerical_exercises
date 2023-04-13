@@ -1,32 +1,14 @@
-# Prerequisites
-*.d
+1_Simpson_integral/*.o
+1_Simpson_integral/*.x
+1_Simpson_integral/*.dat
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+2_RK_second_order/*.o
+2_RK_second_order/*.dat
+2_RK_second_order/*.x
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+3_PDE_solver/*.o
+3_PDE_solver/*.x
+3_PDE_solver/*.dat
+3_PDE_solver/nr.cpp
+3_PDE_solver/results_expl/*.dat
+3_PDE_solver/results_impl/*.dat
